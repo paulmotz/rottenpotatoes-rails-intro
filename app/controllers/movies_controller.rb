@@ -17,11 +17,11 @@ class MoviesController < ApplicationController
 
   def index
     @sort = params[:sorting]
-    @ratings = params[:ratings].nil? ? [] : params[:ratings].keys
+    @ratings = ( params[:ratings].nil? ) ? {} : params[:ratings]
 
     movies = Movie.all
     if @ratings.any?
-      movies = movies.where(:rating => @ratings)
+      movies = movies.where(:rating => @ratings.keys)
     end
     
     unless @sort.nil?
