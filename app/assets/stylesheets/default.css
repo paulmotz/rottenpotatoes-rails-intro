@@ -59,3 +59,8 @@ form label {
   font-weight: bold;
   color: maroon;
 }
+
+/* change highlight colour of selected column */
+table#movies th.hilite {
+  background-color: yellow;
+}
